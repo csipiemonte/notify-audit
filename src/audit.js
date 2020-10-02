@@ -81,7 +81,7 @@ async function doInsert()
         await db.execute(sql);
         logger.debug("insert audits completed");
     } catch (e) {
-        logger.error("error in query: ", e);
+        logger.error("error in query: ", e.message);
     }
     setTimeout(doInsert, 0);
 }
@@ -101,7 +101,7 @@ async function shutdown(){
         await db.end();
         logger.debug("STOPPED DATABASE");
     }catch(e){
-        logger.error("Error closing connection: ",e);
+        logger.error("error closing connection: ", e.message);
         process.exit(1);
     }
 }
