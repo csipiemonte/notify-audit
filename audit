@@ -1,2 +1,1 @@
-cd /appserv/unp/notify/audit/src/
-node audit.js >/dev/null 2>&1 &
+node src/audit.js >/dev/null 2>&1 &
