@@ -2,7 +2,7 @@
   "name": "audit",
   "version": "1.0.0",
   "description": "",
-  "main": "audit.js",
+  "main": "index.js",
   "directories": {
     "doc": "docs",
     "test": "test"

@@ -1,1 +1,2 @@
-node src/audit.js >/dev/null 2>&1 &
+#!/bin/bash
+cd src && node audit.js >/dev/null 2>&1 &
