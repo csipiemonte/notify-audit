@@ -1,12 +1,11 @@
 var commons = require("../../commons/src/commons");
-console.log(JSON.stringify(process.env, null, 4));
 const conf = commons.merge(require('./conf/audit'), require('./conf/audit-' + (process.env.ENVIRONMENT || 'localhost')));
-console.log(JSON.stringify(conf, null, 4));
 const obj = commons.obj(conf);
 
 const logger = obj.logger();
 const db = obj.db();
 const queryBuilder = obj.query_builder();
+
 var to_continue_insert = true;
 
 function sleep(ms) {
@@ -34,16 +33,13 @@ function checkAudit(payload) {
 var bulk = [];
 async function insert(data) {
     var audit = data.payload;
-    // stringify inner object
+    
     Object.keys(audit).filter( e=> typeof audit[e] === 'object').forEach(e => audit[e] = JSON.stringify(audit[e]));
     bulk.push(queryBuilder.insert().table("audit").values(audit).sql);
     while(bulk.length >= 500) await sleep(1000);
-    //await db.execute(sql);
-
 }
 
-async function doInsert()
-{
+async function doInsert() {
     if(!to_continue_insert) return;
 
     if(bulk.length == 0) return setTimeout(doInsert, 1000);
@@ -65,19 +61,18 @@ logger.debug(JSON.stringify(process.env, null, 4));
 logger.debug(JSON.stringify(conf, null, 4));
 obj.consumer("audit", checkAudit, null, insert, true)();
 
-
-async function shutdown(){
+async function shutdown() {
     to_continue_insert = false;
-    try{
+    try {
         await sleep(2000);
         logger.debug("STOPPING DATABASE");
         await db.end();
         logger.debug("STOPPED DATABASE");
-    }catch(e){
+    } catch(e) {
         logger.error("error closing connection: ", e.message);
         process.exit(1);
     }
 }
 
-process.on("SIGINT",shutdown);
-process.on("SIGTERM",shutdown);
+process.on("SIGINT", shutdown);
+process.on("SIGTERM", shutdown);
