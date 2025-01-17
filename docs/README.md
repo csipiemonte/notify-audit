@@ -39,6 +39,7 @@ I principali attributi presenti nei file di configurazione sono elencati di segu
 * `mb`: contiene la configurazione per il Message Broker.
     * `queues`: contiene le informazioni per le code del message broker
         * `messages`: url della coda su cui leggere i messaggi da inviare
+        * `retry`: url della coda di retry dove inserire i messaggi di audit non salvati correttamente sul db
     * `token`: il token auth per chiamare il message broker
 * `log4js`: la configurazione di log4js (vedi https://www.npmjs.com/package/log4js)
 
