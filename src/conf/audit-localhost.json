@@ -15,7 +15,7 @@
             "messages": "http://localhost:8080/api/v1/queues/audit:audit?count=10",
             "retry": "http://localhost:8080/api/v1/queues/audit:audit:to_be_retried"
         },
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMDM3MjI3MzEtZmQ1My00Y2ZjLWI0ZmItNTA2YTU0MTQ4NzYxIiwicHJlZmVyZW5jZV9zZXJ2aWNlX25hbWUiOiJhdWRpdCIsImV4cCI6MjUzNDAyMjEwODAwLCJpYXQiOjE1MTk4MjI3MDQ0MzgsImFwcGxpY2F0aW9ucyI6eyJtYiI6WyJlbnF1ZXVlIiwiZGVxdWV1ZSJdLCJwcmVmZXJlbmNlcyI6WyJyZWFkIiwid3JpdGUiLCJhZG1pbiJdLCJtZXgiOlsicmVhZCIsIndyaXRlIiwiYWRtaW4iXX19.YAYs5zJguf5CXjWRyrhTDuyroFsh-QH9Igni2jp7VqI"
+        "token": "YF6E7N5muTBWYRkQaLjSIBgQFtCxKObkWnbW0xVd2EW1U9+pKiUi5zyM6lrrKpOFqn7gTgnmiB9v3sauEaPeoj92En5Ftebn+KA8PRG/O6xv+d4cI93QMWDUxOi4feppLvKAbdhJAfFmmr7FD3PJW+Br5Ia8g7VKGcYedwO7VyOnTeVjEqP9lQapbe0sxAWTHHORE04nqGFrhUqqI33JQAsSBWK+A8SvDNn5J+9CwybskQRH//pU9ha4O6oiagc0y+6WNKAV8y9FzayM4QU81swVAHG8RDwouqt1ynyNxz8XNMWADEc7evh0uNqZeoED0iujJB45kQQBiQ7yR1mrXHUXN58nMwvGielmK8lZBymcQ28j43qMo8SBMkOII6fMZqTRKWJDZv/idNrSBfq/j8aZAAxZcYqXFEfrEcs5RKsXzTslrJKb9QTSrc1vd+kMLxQYVTBi5dAwuC81j0G4J9QrtnDdArfaiDSVpmbO14THa1L78vEx9MlDhoAoikgiRmg+nRYvcWtKOgQzcJ7KGMLgYI/U3h7E7jYXnzUaVNU="
     },
     "log4js": {
         "appenders": {
